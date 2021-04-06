@@ -1,0 +1,74 @@
+@import "variables";
+
+.Projects {
+  padding: 80px 45px;
+  padding-top: 40px;
+  background-color: $darker-color;
+
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    .project {
+      margin: 10px auto;
+      height: 150px;
+      width: 75%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      > h4, > .project-details {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border-radius: 10px;
+        padding: 10px 20px;
+      }
+
+      > h4 {
+        background-image:linear-gradient(to bottom right, lighten($darkest-color, 5), $darkest-color);
+      }
+
+      .project-details {
+        background-image: linear-gradient(to bottom right, lighten($gray-color, 5), $gray-color, saturate($gray-color, 5));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition-duration: .25s;
+        animation-name: proj-scaley;
+        transform:scaleY(0);
+        transform-origin: top;
+        opacity: .9;
+        
+        a {
+          margin-top: auto;
+          background-color: transparent;
+          transition-duration: 0.25s;
+          animation-name: btn-hov;
+
+          &:hover {
+            background-color: #fff;
+            color: $darker-color;
+          }
+        }
+      }
+      &:hover .project-details {
+        transform: scaleY(1);
+      }
+    }
+  }
+}
+
+@keyframes proj-scaley {
+  from {transform: scaleY(0);}
+  to {transform: scaleY(1);}
+}
+
+@keyframes btn-hov {
+  from {background-color: transparent; color: #fff;}
+  to {background-color: #fff; color: $darker-color;}
+}

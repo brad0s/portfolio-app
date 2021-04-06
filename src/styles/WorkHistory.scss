@@ -1,0 +1,33 @@
+@import "variables";
+
+.WorkHistory {
+  background-color: $darker-color;
+  padding: 80px 15px;
+
+  h2 {
+    margin-top: 40px;
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &-item {
+    background-color: #fff;
+    margin: 10px 0;
+    border-radius: 15px;
+    width: 150px;
+    height: 78.95px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    img {
+      width: 125px;
+      align-self: center;
+    }
+  }
+}

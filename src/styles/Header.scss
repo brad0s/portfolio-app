@@ -1,0 +1,85 @@
+@import "variables";
+
+.Header {
+  background-color: $darker-color;
+  background-image: linear-gradient(to bottom right, lighten($darker-color, 10), $darker-color);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+
+  h1 {
+    color: #fff;
+  }
+
+  .jobTitle {                         
+    color: $lighter-color;
+  }
+
+  .viewMore {
+    font-size: 18px;
+    color: $darker-color;
+    background-color: white;
+    // background-image: linear-gradient(to bottom right, #fff, darken(#fff, 10));
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+    animation: bounce 6s cubic-bezier(0.280, 0.840, 0.420, 1) infinite 1s;
+    
+    &:hover {
+      animation-play-state: paused;
+      color: #fff;
+      background-color: $darkest-color;
+      background-image: unset;
+    }
+
+    &.hide {
+      transform-origin: bottom;
+      animation: hide .4s;
+      animation-fill-mode: forwards;
+    }
+    
+    &.unhide {
+      transform-origin: bottom;
+      animation: unhide .3s, bounce 6s cubic-bezier(0.280, 0.840, 0.420, 1) infinite 1s;
+      // animation-fill-mode: forwards;
+    }
+
+    img {
+      width: 12px;
+    }
+  }
+}
+
+@keyframes hide {
+  from {transform: translateY(0) scale(1,1); display: block;}
+  to {transform: translateY(70px) scale(0.7, 0.7); display: none;}
+}
+
+@keyframes unhide {
+  from {transform: translateY(70px) scale(0.7, 0.7); display: none;}
+  to {transform: translateY(0) scale(1,1); display: block;}
+}
+
+// animation run for 1.75s, delay for 5.75s: total 7s
+@keyframes bounce {
+  0%    { transform: scale(1,1) translateY(0) }
+  1.8%  { transform: scale(1.1,0.9) translateY(0) }
+  5.4%  { transform: scale(0.9,1.1) translateY(-15px) }
+  9%    { transform: scale(1.05,0.95) translateY(0) }
+  10.3% { transform: scale(1,1) translateY(-3px) }
+  11.5% { transform: scale(1,1) translateY(0) }
+  // Finish changes by here
+  18%   { transform: scale(1,1) translateY(0) }
+
+  // Between 20% and 100% nothings changes
+  100%  { transform: scale(1,1) translateY(0) }
+}

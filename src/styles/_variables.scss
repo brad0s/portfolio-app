@@ -1,0 +1,32 @@
+@import "custom-variables";
+
+// $color: #46a073;
+// $color: rgb(168, 18, 237);
+// $color: hsl(264, 86%, 45%);
+// $color: #6413ba;
+$color: #6633CC;
+// $color: hsl(230, 62%, 50%);
+
+
+$darkest-color: darken($color, 30%);
+$darker-color: darken($color, 15%);
+$normal-color: $color;
+$lighter-color: lighten($color, 15%);
+$lightest-color: lighten($color, 30%);
+
+$gray-color: #3F335A;
+
+
+// Colors
+// $darker-green: #10231a;
+// $dark-green: #173526;
+// $green: #46a073;
+// $light-green: #a7d7bf;
+// $lighter-green: #edf7f2;
+
+
+
+
+
+
+

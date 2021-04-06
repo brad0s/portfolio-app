@@ -1,0 +1,40 @@
+@import "variables";
+
+.NavBar {
+  position: fixed;
+  height: 50px;
+  background-color: $darkest-color;
+  background-image: linear-gradient(to bottom right, lighten($darkest-color, 5), $darkest-color);
+  width: 100%;
+  padding: 5px 15px;
+  z-index: 99;
+
+  > .logo {
+    float: left;
+    img {
+      width: 40px;
+    }
+  }
+
+  > .contact {
+    float: right;
+    background-color: transparent;
+    // background-image: linear-gradient(to bottom right, lighten($darkest-color, 5), $darkest-color);
+    font-family: inherit;
+    font-size: 16px;
+    height: 40px;
+    color: white;
+    transition-duration: 0.25s;
+    animation-name: btn-hov;
+
+    &:hover, &:focus {
+      background-color: white;
+      color: $darkest-color;
+    }
+  }
+}
+
+@keyframes btn-hov {
+  from {background-color: transparent; color: #fff;}
+  to {background-color: #fff; color: $darkest-color;}
+}
